@@ -32,7 +32,7 @@ drawing_mode = st.sidebar.selectbox(
 )
 # Create a canvas component
 canvas_result = st_canvas(
-    fill_color="rgb(255, 165, 0)",  # Fixed fill color with some opacity
+    fill_color="rgba(255, 165, 0, 0.3)",  # Fixed fill color with some opacity
     stroke_width=stroke_width,
     stroke_color=stroke_color,
     background_color= bg_color,
