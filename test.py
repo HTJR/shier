@@ -1,15 +1,14 @@
 import streamlit as st
 from streamlit_drawable_canvas import st_canvas
-import cv2
 import string 
 import random
 import os 
 import numpy as np
 from streamlit_lottie import st_lottie
 import requests
-
-st.title("Shitter")
-st.write("Dump all your shit here")
+from PIL import Image
+st.title("Le Art")
+st.write("MoDeRn ArT ")
 
 def load_lottieurl(url: str):
     r = requests.get(url)
@@ -49,13 +48,11 @@ im=canvas_result.image_data
 #im=Image.fromarray((im*255).astype(np.uint8))
 #im = im.convert('rgb')
 if st.button("post"):
-    img_float32 = np.float32(im)
-    im=cv2.cvtColor(img_float32, cv2.COLOR_RGB2BGR)
     letters = string.ascii_lowercase
     na=''.join(random.choice(letters) for i in range(10))
-    cv2.imwrite("images/"+na+".jpg",im) 
+    np.save("images/"+na+".npy",im) 
 
 st.markdown("# Posts")
 for i in os.listdir("./images"):
-    im=cv2.imread("./images/"+i)
-    st.image(im,caption='Draw',clamp=True,use_column_width=True)
+    data = np.load("./images/"+i)
+    st.image(data,caption='Draw',clamp=True,use_column_width=True)
