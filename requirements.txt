@@ -1,8 +1,8 @@
 streamlit==0.74.1
 numpy==1.18.5
-opencv-python
 streamlit-drawable-canvas==0.1.1
 streamlit-lottie==0.0.2
+opencv-python
 string
 random
 requests
