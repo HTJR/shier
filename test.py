@@ -40,8 +40,7 @@ canvas_result = st_canvas(
     update_streamlit=True,
     height=550,
     drawing_mode=drawing_mode,
-    key="canvas",
-)
+    key="canvas",)
 
 # Do something interesting with the image data and paths
 im=canvas_result.image_data
