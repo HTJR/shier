@@ -31,8 +31,9 @@ drawing_mode = st.sidebar.selectbox(
     "Drawing tool:", ("freedraw", "line", "rect", "circle", "transform")
 )
 # Create a canvas component
-canvas_result = st_canvas(stroke_width=stroke_width,stroke_color=stroke_color,background_color= bg_color,background_image=None,update_streamlit=True,height=550,drawing_mode=drawing_mode,key="canvas")
-
+canvas_result = st_canvas(
+    stroke_width, stroke_color, bg_color, height=550, drawing_mode=drawing_mode, key="canvas"
+)
 # Do something interesting with the image data and paths
 im=canvas_result.image_data
 #im=Image.fromarray((im*255).astype(np.uint8))
