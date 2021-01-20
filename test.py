@@ -35,7 +35,7 @@ canvas_result = st_canvas(
     stroke_width, stroke_color, bg_color, height=550, drawing_mode=drawing_mode, key="canvas"
 )
 # Do something interesting with the image data and paths
-im=canvas_result.image_data
+im=canvas_result
 #im=Image.fromarray((im*255).astype(np.uint8))
 #im = im.convert('rgb')
 if st.button("post"):
