@@ -30,6 +30,7 @@ bg_color = st.sidebar.color_picker("Background color hex: ", "#eee")
 drawing_mode = st.sidebar.selectbox(
     "Drawing tool:", ("freedraw", "line", "rect", "circle", "transform")
 )
+"""
 # Create a canvas component
 canvas_result = st_canvas(
     fill_color="rgb(255, 165, 0)",
@@ -50,7 +51,7 @@ if st.button("post"):
     letters = string.ascii_lowercase
     na=''.join(random.choice(letters) for i in range(10))
     np.save("images/"+na+".npy",im) 
-
+"""
 st.markdown("# Posts")
 for i in os.listdir("./images"):
     data = np.load("./images/"+i)
