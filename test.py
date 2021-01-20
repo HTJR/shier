@@ -32,7 +32,7 @@ drawing_mode = st.sidebar.selectbox(
 )
 # Create a canvas component
 canvas_result = st_canvas(
-    fill_color="rgb(255, 165, 0)",  # Fixed fill color with some opacity
+    fill_color="rgb(255, 165, 0)",
     stroke_width=stroke_width,
     stroke_color=stroke_color,
     background_color= bg_color,
@@ -40,7 +40,7 @@ canvas_result = st_canvas(
     update_streamlit=True,
     height=550,
     drawing_mode=drawing_mode,
-    key="canvas",)
+    key="canvas")
 
 # Do something interesting with the image data and paths
 im=canvas_result.image_data
