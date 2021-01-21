@@ -23,23 +23,24 @@ st_lottie(lottie_json)
 
 
 # Specify canvas parameters in application
-stroke_width = st.slider("Stroke width: ", 1, 25, 3)
-stroke_color = st.color_picker("Stroke color hex: ")
-bg_color = st.color_picker("Background color hex: ", "#eee")
-#bg_image = st.sidebar.file_uploader("Background image:", type=["png", "jpg"])
-drawing_mode = st.selectbox(
-    "Drawing tool:", ("freedraw", "line", "rect", "circle", "transform")
-)
+def side():
+    stroke_width = st.sidebar.slider("Stroke width: ", 1, 25, 3)
+    stroke_color = st.sidebar.color_picker("Stroke color hex: ")
+    bg_color = st.sidebar.color_picker("Background color hex: ", "#eee")
+    drawing_mode = st.sidebar.selectbox("   Drawing tool:", ("freedraw", "line", "rect", "circle", "transform"))
+    return stroke_width,stroke_color,bg_color,drawing_mode
 # Create a canvas component
+
+sw,sc,bgc,dm=side()
 canvas_result = st_canvas(
     fill_color="rgb(255, 165, 0)",  # Fixed fill color with some opacity
-    stroke_width=stroke_width,
-    stroke_color=stroke_color,
-    background_color=bg_color,
+    stroke_width=sw,
+    stroke_color=sc,
+    background_color=bgc,
     background_image=None,
     update_streamlit=True,
     height=550,
-    drawing_mode=drawing_mode,
+    drawing_mode=dm,
     key="canvas",
 )
 # Do something interesting with the image data and paths
