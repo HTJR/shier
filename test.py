@@ -26,10 +26,10 @@ st_lottie(lottie_json)
 def side():
     stroke_width = st.sidebar.slider("Stroke width: ", 1, 25, 3)
     drawing_mode = st.sidebar.selectbox("   Drawing tool:", ("freedraw", "line", "rect", "circle", "transform"))
-    return stroke_width,stroke_color,bg_color,drawing_mode
+    return stroke_width,drawing_mode
 # Create a canvas component
 
-sw,sc,bgc,dm=side()
+sw,dm=side()
 canvas_result = st_canvas(
     fill_color="rgb(255, 165, 0)",  # Fixed fill color with some opacity
     stroke_width=sw,
