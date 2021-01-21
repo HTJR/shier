@@ -25,8 +25,6 @@ st_lottie(lottie_json)
 # Specify canvas parameters in application
 def side():
     stroke_width = st.sidebar.slider("Stroke width: ", 1, 25, 3)
-    stroke_color = st.sidebar.color_picker("Stroke color hex: ")
-    bg_color = st.sidebar.color_picker("Background color hex: ", "#eee")
     drawing_mode = st.sidebar.selectbox("   Drawing tool:", ("freedraw", "line", "rect", "circle", "transform"))
     return stroke_width,stroke_color,bg_color,drawing_mode
 # Create a canvas component
