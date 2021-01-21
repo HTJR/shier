@@ -53,5 +53,5 @@ if st.button("post"):
 
 st.markdown("# Posts")
 for i in os.listdir("./images"):
-    data = np.load("./images/"+i,allow_pickle=True)
+    data = np.load("./images/"+i)
     st.image(data,caption='Draw',use_column_width=True)
