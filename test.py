@@ -9,7 +9,7 @@ import requests
 from PIL import Image
 st.title("Le Art")
 st.write("MoDeRn ArT ")
-
+"""
 def load_lottieurl(url: str):
     r = requests.get(url)
     if r.status_code != 200:
@@ -19,7 +19,7 @@ def load_lottieurl(url: str):
 lottie_url = "https://assets6.lottiefiles.com/private_files/lf30_nj9klqqz.json"
 lottie_json = load_lottieurl(lottie_url)
 st_lottie(lottie_json)
-
+"""
 
 
 # Specify canvas parameters in application
@@ -43,7 +43,7 @@ canvas_result = st_canvas(
     key="canvas",
 )
 # Do something interesting with the image data and paths
-im=canvas_result
+im=canvas_result.image_data
 #im=Image.fromarray((im*255).astype(np.uint8))
 #im = im.convert('rgb')
 if st.button("post"):
@@ -54,4 +54,4 @@ if st.button("post"):
 st.markdown("# Posts")
 for i in os.listdir("./images"):
     data = np.load("./images/"+i,allow_pickle=True)
-    st.image(data,caption='Draw',clamp=True,use_column_width=True)
+    st.image(data,caption='Draw',use_column_width=True)
