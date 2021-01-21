@@ -55,4 +55,5 @@ st.markdown("# Posts")
 for i in os.listdir("./images"):
     data = np.load("./images/"+i,allow_pickle=True,fix_imports=True)
     st.write(data)
+    st.write(i)
     #st.image(data,caption='Draw',clamp,use_column_width=True)
