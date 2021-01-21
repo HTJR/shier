@@ -53,7 +53,7 @@ if st.button("post"):
 
 st.markdown("# Posts")
 for i in os.listdir("./images"):
-    data = np.load("./images/"+i,allow_pickle=True)
+    data = np.load("./images/"+i)
     im=data
     data=0
     st.image(im,caption='Draw',use_column_width=True)
