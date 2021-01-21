@@ -23,11 +23,11 @@ st_lottie(lottie_json)
 
 
 # Specify canvas parameters in application
-stroke_width = st.sidebar.slider("Stroke width: ", 1, 25, 3)
-stroke_color = st.sidebar.color_picker("Stroke color hex: ")
-bg_color = st.sidebar.color_picker("Background color hex: ", "#eee")
+stroke_width = st.slider("Stroke width: ", 1, 25, 3)
+stroke_color = st.color_picker("Stroke color hex: ")
+bg_color = st.color_picker("Background color hex: ", "#eee")
 #bg_image = st.sidebar.file_uploader("Background image:", type=["png", "jpg"])
-drawing_mode = st.sidebar.selectbox(
+drawing_mode = st.selectbox(
     "Drawing tool:", ("freedraw", "line", "rect", "circle", "transform")
 )
 # Create a canvas component
