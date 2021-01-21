@@ -56,4 +56,4 @@ for i in os.listdir("./images"):
     data = np.load("./images/"+i,allow_pickle=True,fix_imports=True)
     #st.write(i)
     #st.write(data)
-    st.image(data,caption='Draw',clamp,use_column_width=True)
+    st.image(data,caption='Draw',use_column_width=True)
