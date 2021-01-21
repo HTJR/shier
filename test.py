@@ -49,11 +49,11 @@ im=canvas_result.image_data
 if st.button("post"):
     letters = string.ascii_lowercase
     na=''.join(random.choice(letters) for i in range(10))
-    np.save("images/"+na+".npy",im,allow_pickle=True)
+    np.save("images/"+na+".npy",im,allow_pickle=True,fix_imports=True)
 
 st.markdown("# Posts")
 for i in os.listdir("./images"):
-    data = np.load("./images/"+i,allow_pickle=True)
+    data = np.load("./images/"+i,allow_pickle=True,fix_imports=True)
     im=data
     data=0
     st.image(im,caption='Draw',use_column_width=True)
